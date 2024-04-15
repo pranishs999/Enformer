@@ -3,6 +3,24 @@
 {% block title %}Home{% endblock %}
 {% block underline_about %}underline underline-offset-8 bg-gray-700 text-white{% endblock %}
 {% block content %} 
+<section>
+  
+<div class="bg-gradient-to-tr from-fuchsia-300 to-sky-500">
+  <section id="login" class="p-4 flex flex-col justify-center min-h-screen max-w-md mx-auto">
+    <div class="p-6 bg-sky-100 rounded">
+      <div class="flex items-center justify-center font-black m-3 mb-7">
+      <h1 class="tracking-wide text-5xl text-black" style=" font-family: Elsie, serif;" >Enformer</h1>
+      </div>
+      <div class="flex items-center justify-center font-black mb-12">
+      <span class="tracking-wide text-2xl text-gray-900" style=" font-family: Elsie, serif;" >Welcome to Enformer</span>
+      </div>
+        <form id="login_form" action="api_login" method="POST" class="flex flex-col justify-center">
+        </form>
+    </div>
+  </section>
+
+</div>
+</section>
 
 {% endblock content %}
-{% block underline_about %}underline underline-offset-8 bg-gray-700 text-white{% endblock %}
+{% block underline_about_f %}underline underline-offset-8 bg-gray-700 text-white{% endblock %}

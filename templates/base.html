@@ -9,6 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
         <!-- TailwindCSS -->
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" rel="stylesheet">
+  
 
 </head>
 
@@ -42,14 +47,14 @@
     </nav>
   </header>
               
-  <main class="container mt-4">
+  <main class="container mt-4>
     {% block content %}
     {% endblock content %}
   </main>
-  <footer class="footer mt-auto py-3 ">
+  <footer class="footer mt-auto py-3 sticky">
     <div class="container">
-      <span class="text-body-secondary">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <span class="text-body-secondary ">
+        <ul class="nav border-bottom pb-3 mb-3 flex justify-center">
           <a href="#" class="{% block underline_home_f %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
           <a href="#" class="{% block underline_gallery_f %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gallery</a>
           <a href="#" class="{% block underline_teachers_f %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Teachers</a>
