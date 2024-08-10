@@ -1,8 +1,9 @@
 from django import views
 from django.contrib import admin
 from django.urls import path
-from . import views
+from django.views.generic import TemplateView
+from app1.views import *
 
 urlpatterns = [
-   path('', views.index,name='blog'),
+   path('', IndexView.as_view()),
 ]
