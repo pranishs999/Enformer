@@ -6,4 +6,5 @@ from app1.views import *
 
 urlpatterns = [
    path('', IndexView.as_view()),
+   path('login/', LoginView.as_view()),
 ]
