@@ -20,8 +20,6 @@
 .no-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
 }
-body {
-    font-family: "Audiowide", sans-serif;
-}
+
 
   
