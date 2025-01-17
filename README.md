@@ -1,9 +1,37 @@
-# Enformer
+# Event Management Application - Prototype Overview
 
-we have used Django as a back-end and HTML_CSS as the front-end.
-Djanjo has been quite a hassle to deal and the front-end part is most tricky one, so we settle for less  for now thinking it as only a prototype and not a full fledge website that deals with a lot of complex data.
-We have done some research on Event managing company like ours...but we are not able to find such type of application in nepal but we found some of them in other countries.
-For instance, EventBrite is an website that manages the whole event as we have planned to do in future.
-Another example is MeetUp which does the similar works as our future plans
-We have found one type that list such upcoming events in nepal but it was not that quite effective as it is facebook/social media based only rather than ours which is website based.
-The market size is quite big as such you will not find any cities without any type of events..that makes us globally available.
+In this project, we have used **Django** as the back-end framework and **HTML/CSS** for the front-end. While working with Django, we faced some challenges, especially with integrating the back-end efficiently. On the front-end side, although our focus was on creating a simple user interface for the prototype, it proved to be a tricky aspect to finalize. Given that this is a prototype, we opted for a basic design and functionality, knowing that this is not the full-fledged version that would eventually handle complex data and a large number of features.
+
+## Research and Market Analysis
+
+We conducted some research into existing event management platforms, both within Nepal and internationally, to understand how we can position our future application. While there are a few similar services in other countries, we couldn't find an application in Nepal that serves the same purpose.
+
+Some notable international platforms we looked into include:
+
+- **EventBrite**: A leading platform that handles event creation, management, and ticketing, just like we envision for the future of our platform.
+- **MeetUp**: Another global platform that allows users to organize and attend events, which aligns with the future features we plan to integrate.
+
+### Local Event Listing in Nepal
+
+In Nepal, we found platforms that list upcoming events, but they were far from ideal. One popular method for discovering events was through **Facebook** and other social media channels. However, these platforms are not tailored for event management, making them less efficient for both users and organizers. In contrast, our solution aims to provide a more streamlined and focused experience through a dedicated website-based platform rather than relying on social media.
+
+## Market Potential
+
+The event management market is vast and growing, with events happening regularly in cities worldwide. From concerts and festivals to conferences and social gatherings, every city has its share of events. This creates a massive potential market, and the application we are building could cater to a global audience. 
+
+By focusing on a website-based platform, we are positioning ourselves to offer an organized and professional alternative to social media-based event discovery tools. With the right features and scalability, our platform has the potential to serve both local and international markets.
+
+---
+
+### Key Takeaways:
+- **Technology Stack**: Django (back-end), HTML/CSS (front-end).
+- **Challenges**: Django back-end integration and front-end design complexity.
+- **Research Findings**:
+  - No similar event management platforms exist in Nepal.
+  - International examples: EventBrite and MeetUp.
+  - Social media-based event listing in Nepal is not effective.
+- **Market Opportunity**: Large and growing, globally available, with every city hosting a variety of events.
+
+---
+
+This Markdown file outlines the current status and future potential of the event management platform, emphasizing the challenges faced and the market opportunity ahead.

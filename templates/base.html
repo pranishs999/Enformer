@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enformer</title>
-    {% comment %} <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> {% endcomment %}
+    {% comment %} <link href="https://cdnjs.cloudflare.com/ajax/libs/Enformer/2.3.0/Enformer.min.css" rel="stylesheet" /> {% endcomment %}
         <!-- TailwindCSS -->
     {% comment %} <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
@@ -21,11 +21,11 @@
 
 <body>
   <header class="header">
-    <nav class="bg-white border-gray-200 dark:bg-white">
+    <nav class="bg-grey-900 border-gray-200 dark:bg-grey-900">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
         <a href="/" class="flex items-center space-x-1 rtl:space-x-reverse">
-            <img src="{% static '/img/logo.jpg' %}" class="h-8 bor" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-900">Enformer</span>
+            <img src="{% static '/img/logo.jpg' %}" class="h-8 bor" alt="Enformer Logo" />
+            <span class="self-center text-2xl font-semibold grey-900space-nowrap dark:text-gray-900">Enformer</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none    focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -34,71 +34,77 @@
             </svg>
         </button>
           <div class="hidden w-full md:block md:w-auto justify-end" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 bg-white md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-white md:dark:bg-white dark:border-white">
-              <a href="/" class="{% block underline_home %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
-              <a href="/blogs" class="{% block underline_blogs %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blogs</a>
-              <a href="/profile" class="{% block underline_profile %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Profile</a>
-              <a href="/edit" class="{% block underline_edit %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Edit</a>
-              <a href="/add" class="{% block underline_add %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Add</a>
-              <a href="/{{login_value}}" class="{% block underline_login %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{login_data}}</a>
-              <a href="/about" class="{% block underline_about %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About Us</a>
-              <a href="/contact" class="{% block underline_contact %}{% endblock %} text-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 bg-grey-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-grey-900 dark:bg-grey-900 md:dark:bg-grey-900 dark:border-grey-900">
+              <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">Home</a>
+              <a href="/blogs" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">Blogs</a>
+              <a href="/profile" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">Profile</a>
+              <a href="/edit" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">Edit</a>
+              <a href="/add" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">Add</a>
+              {% if user.is_authenticated %}
+                <a href="/logout" 
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent 
+                          md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 
+                          md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 
+                          md:dark:hover:bg-transparent">
+                  Logout
+                </a>
+                {% else %}
+                    <a href="/login" 
+                      class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent 
+                              md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 
+                              md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 
+                              md:dark:hover:bg-transparent">
+                      Login
+                    </a><body class="bg-white">
+
+              {% endif %}
+
+              <a href="/about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">About Us</a>
+              <a href="/contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-grey-900 md:dark:hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-grey-900 md:dark:hover:bg-transparent">Contact</a>
             </ul>
           </div>
       </div>
     </nav>
   </header>
               
-  <main class="container mt-4">
+  <main class="container mt-16">
     {% block content %}
     {% endblock content %}
   </main>
-  <footer class="footer mt-auto py-3 pb-24 bg-gray-900 sticky">
-    <div class="container">
-      <span class="text-body-secondary ">
-        <ul class="nav border-bottom pb-3 mb-3 flex justify-center">
-          <a href="#" class="text-white {% block underline_home_f %}{% endblock %}  hover:bg-gray-50 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium">Home</a>
-          <a href="#" class="text-white {% block underline_gallery_f %}{% endblock %}  hover:bg-gray-50 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium">Gallery</a>
-          <a href="#" class="text-white {% block underline_teachers_f %}{% endblock %}  hover:bg-gray-50 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium">Teachers</a>
-          <a href="#" class="text-white {% block underline_about_f %}{% endblock %}  hover:bg-gray-50 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium">About Us</a>
-          <a href="#" class="text-white {% block underline_contact_f %}{% endblock %}  hover:bg-gray-50 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium">Contact</a>
-        </ul>
-        <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
-      </span>
-    </div>
-  </footer>
 
-
-<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+<footer class="bg-white rounded-lg shadow dark:bg-white m-4">
   <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
-          <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-              <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+          <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+              <img src="{% static '/img/logo.jpg' %}" class="h-8" alt="Enformer Logo" />
+              <span class="self-center text-2xl font-semibold grey-900space-nowrap dark:text-grey-900">Enformer</span>
           </a>
-          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-              <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">About</a>
+          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gay-900 sm:mb-0 dark:text-gray-900">
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6 hover:bg-gray-900 md:hover:bg-transparent">Home</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6 hover:bg-gray-900 md:hover:bg-transparent">About</a>
+            </li>
+            <li>
+                  <a href="#" class="hover:underline me-4 md:me-6" hover:bg-gray-900 md:hover:bg-transparent>Privacy Policy</a>
               </li>
               <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                  <a href="#" class="hover:underline me-4 md:me-6 hover:bg-gray-900 md:hover:bg-transparent">Licensing</a>
               </li>
               <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-              </li>
-              <li>
-                  <a href="#" class="hover:underline">Contact</a>
+                  <a href="#" class="hover:underline hover:bg-gray-900 md:hover:bg-transparent">Contact</a>
               </li>
           </ul>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" class="hover:underline">Enformer™</a>. All Rights Reserved.</span>
   </div>
 </footer>
 
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Enformer/2.3.0/Enformer.min.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
 </html>
